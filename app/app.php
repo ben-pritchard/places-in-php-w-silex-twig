@@ -5,10 +5,18 @@
 
     session_start();
 
-    $app = new Sliex\Application();
-    
-$app->register(new Silex\Provider\TwigServiceProvder(), array(
-    'twig.path' => __DIR__.'/../views'
+    if (empty($_SESSION["list_of_places"])) {
+        $_SESSION["list_of_places"] = array();
+    }
 
-))
+    $app = new Sliex\Application();
+
+    $app->register(new Silex\Provider\TwigServiceProvder(), array(
+        'twig.path' => __DIR__.'/../views'
+    ));
+
+    $app->get("/", function() use ($app) {
+        return $app['twig']->
+        render('places.html.twig', array('places' => Place::getAll()));
+    })
 ?>
