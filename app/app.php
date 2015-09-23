@@ -21,7 +21,7 @@
     });
 
     $app->post("/places", function() use ($app) {
-        $place = new Place($_POST['city']);
+        $place = new Place($_POST['city'], $_POST['place_image']);
         $place->save();
         return $app['twig']->
         render('places.html.twig', array('places' => Place::getAll()));

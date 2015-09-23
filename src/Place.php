@@ -3,10 +3,13 @@
     class Place
     {
         private $city;
+        private $image;
 
-        function __construct($city)
+        function __construct($city, $image)
         {
             $this->city = $city;
+            $this->image = $image;
+
         }
 
         //Getters and Setters for places.php
@@ -20,6 +23,17 @@
         {
             return $this->city;
         }
+
+        function setImage($new_image)
+        {
+            $this->image = $new_image;
+        }
+
+        function getImage()
+        {
+            return $this->image;
+        }
+
 
         function save()
         {
@@ -35,6 +49,8 @@
         {
             $_SESSION["list_of_places"] = array();
         }
+
+
 
 
     }
