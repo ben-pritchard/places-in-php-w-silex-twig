@@ -3,16 +3,18 @@
     class Place
     {
         private $city;
+        private $population;
         private $image;
 
-        function __construct($city, $image)
+        function __construct($city, $population, $image)
         {
             $this->city = $city;
+            $this->population = $population;
             $this->image = $image;
 
         }
 
-        //Getters and Setters for places.php
+        // Getters and Setters for places.php
 
         function setCity($new_city)
         {
@@ -34,6 +36,17 @@
             return $this->image;
         }
 
+        function getPopulation()
+        {
+            return number_format($this->population);
+        }
+
+        function setPopulation($population)
+        {
+            $this->population = $population;
+        }
+
+        // class functions
 
         function save()
         {
