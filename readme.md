@@ -1,4 +1,4 @@
-#Places you've visited
+#Places You've Visited
 User inputs different places they have visited.
 
 September 23, 2015
