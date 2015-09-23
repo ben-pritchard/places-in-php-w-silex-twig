@@ -31,6 +31,11 @@
             return $_SESSION["list_of_places"];
         }
 
+        static function deleteAll()
+        {
+            $_SESSION["list_of_places"] = array();
+        }
+
 
     }
 
